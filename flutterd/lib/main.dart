@@ -8,6 +8,8 @@ import 'package:flutterd/state/post_state.dart';
 import 'package:localstorage/localstorage.dart';
 import 'package:provider/provider.dart';
 
+import 'screens/create_community_screen.dart';
+
 main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -44,6 +46,7 @@ class MyApp extends StatelessWidget {
           CategoryScreens.routeName: (ctx) => CategoryScreens(),
           LoginScreens.routeName: (ctx) => LoginScreens(),
           RegisterScreens.routeName: (ctx) => RegisterScreens(),
+          CreateCommunityScreens.routeName: (ctx) => CreateCommunityScreens(),
         },
       ),
     );
