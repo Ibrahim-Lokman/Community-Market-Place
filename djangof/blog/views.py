@@ -41,7 +41,7 @@ class PostView(APIView):
     def post(self, request):
         try:
             data = request.data
-            cat_title = data['catTitle']
+            cat_title = data['communityName']
             cat_obj = Category.objects.get(title=cat_title)
             
             #category = data.category
