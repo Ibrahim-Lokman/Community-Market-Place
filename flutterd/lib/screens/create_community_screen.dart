@@ -7,10 +7,10 @@ import 'package:provider/provider.dart';
 class CreateCommunityScreens extends StatefulWidget {
   static const routeName = '/create-community';
   @override
-  _CreateCommunityScreens createState() => _CreateCommunityScreens();
+  _CreateCommunityScreensState createState() => _CreateCommunityScreensState();
 }
 
-class _CreateCommunityScreens extends State<CreateCommunityScreens> {
+class _CreateCommunityScreensState extends State<CreateCommunityScreens> {
   String _communityName;
   final _form = GlobalKey<FormState>();
 
