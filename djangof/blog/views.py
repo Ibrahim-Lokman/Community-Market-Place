@@ -38,6 +38,32 @@ class PostView(APIView):
             data.append(post)
         return Response(data)
 
+    def post(self, request):
+        try:
+            data = request.data
+            cat_title = data['catTitle']
+            cat_obj = Category.objects.get(title=cat_title)
+            
+            #category = data.category
+            #community_obj = Category.objects.get(id = community_id)
+            post_title = data['title']
+            post_type = data['type']
+            post_content = data['content']
+
+            Post.objects.create( 
+                category = cat_obj,
+                title = post_title,
+                code = post_type,
+                content = post_content,
+                )
+            response_msg = {'error': False}
+        except:
+            response_msg = {'error': True, #"communityobj": community_obj
+            }
+        return Response(response_msg)
+
+
+
 class CategoryView(APIView):
     permission_classes = [IsAuthenticated, ]
     authentication_classes = [TokenAuthentication, ]
