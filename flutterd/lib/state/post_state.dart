@@ -186,6 +186,7 @@ class PostState with ChangeNotifier {
   Future<bool> registerNewCommunity(String communityName) async {
     try {
       String url = 'http://10.0.2.2:8000/api/categorys/';
+
       http.Response response = await http.post(
         url,
         headers: {
