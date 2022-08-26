@@ -192,6 +192,7 @@ class PostState with ChangeNotifier {
         url,
         headers: {
           "Content-Type": "application/json",
+          'Authorization': 'token $token',
         },
         body: json.encode(
           {
