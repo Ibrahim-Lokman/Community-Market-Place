@@ -46,6 +46,18 @@ class CategoryView(APIView):
         query = Category.objects.all()
         serializer = CategorySerializer(query, many=True)
         return Response(serializer.data)
+        
+    def post(self, request):
+        try:
+            data = request.data
+            name = data['communityName']
+            Category.objects.create( 
+                title=name,
+            )
+            response_msg = {'error': False}
+        except:
+            response_msg = {'error': True}
+        return Response(response_msg)
 
 
 class AddALike(APIView):
