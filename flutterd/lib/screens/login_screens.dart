@@ -48,10 +48,6 @@ class _LoginScreensState extends State<LoginScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login To Code"),
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -103,10 +99,12 @@ class _LoginScreensState extends State<LoginScreens> {
                       onPressed: () {
                         _loginNow();
                       },
-                      child: Text("Login",
+                      child: Text(
+                        "Login",
                         style: TextStyle(
-                        color : Colors.white,
-                    ),),
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                     Spacer(),
                     Divider(),
@@ -117,10 +115,11 @@ class _LoginScreensState extends State<LoginScreens> {
                         Navigator.of(context)
                             .pushReplacementNamed(RegisterScreens.routeName);
                       },
-                      child: Text("Register Now",
+                      child: Text(
+                        "Register Now",
                         style: TextStyle(
-                        color : Colors.white,
-                    ),
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],
