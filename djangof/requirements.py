@@ -1,0 +1,9 @@
+asgiref==3.5.2
+autopep8==1.7.0
+Django==4.1
+djangorestframework==3.13.1
+pycodestyle==2.9.1
+pytz==2022.2.1
+sqlparse==0.4.2
+toml==0.10.2
+tzdata==2022.2
