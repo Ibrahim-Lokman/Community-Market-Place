@@ -10,4 +10,6 @@ urlpatterns = [
     path('addreply/', AddReply.as_view()),
     path('login/', obtain_auth_token),
     path('register/', Registernow.as_view()),
+    path('User/', SearchUser.as_view()),
+    path('SearchPost/', SearchPost.as_view()),
 ]

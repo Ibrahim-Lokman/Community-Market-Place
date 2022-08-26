@@ -1,10 +1,16 @@
+from re import search
+from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
+from .serializers import UserSerializers
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-
+from rest_framework.filters import SearchFilter
+from django.contrib.auth.models import User
+from django_filters.rest_framework import DjangoFilterBackend
 
 class PostView(APIView):
     permission_classes = [IsAuthenticated, ]
@@ -167,3 +173,18 @@ class Registernow(APIView):
             serializers.save()
             return Response({'error': False})
         return Response({'error': True})
+
+
+class SearchUser(ListAPIView):
+    queryset= User.objects.all()
+    serializer_class = UserSerializers
+    #filter_backends =[SearchFilter]
+    filter_backends =[DjangoFilterBackend]
+    filterset_fields= ['username', 'email']
+
+class SearchPost(ListAPIView):
+    queryset= Post.objects.all()
+    serializer_class = PostSerializer
+    #filter_backends =[SearchFilter]
+    filter_backends =[DjangoFilterBackend]
+    filterset_fields= ['title']
