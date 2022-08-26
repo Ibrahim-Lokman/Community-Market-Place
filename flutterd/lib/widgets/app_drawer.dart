@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterd/screens/login_screens.dart';
 import 'package:localstorage/localstorage.dart';
-
+import 'package:flutterd/screens/create_post_screen.dart';
 import '../screens/create_community_screen.dart';
 
 class AddDrawer extends StatelessWidget {
@@ -17,6 +17,10 @@ class AddDrawer extends StatelessWidget {
     _createCommunityScreen() {
       Navigator.of(context)
           .pushReplacementNamed(CreateCommunityScreens.routeName);
+    }
+
+    void _createPostScreen() {
+      Navigator.of(context).pushReplacementNamed(CreatePostScreens.routeName);
     }
 
     return Drawer(
@@ -58,7 +62,7 @@ class AddDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              // _creategroupnow();
+              _createPostScreen();
             },
             trailing: Icon(
               Icons.note_add,
