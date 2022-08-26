@@ -183,6 +183,32 @@ class PostState with ChangeNotifier {
     }
   }
 
+  Future<bool> registerNewCommunity(String communityName) async {
+    try {
+      String url = 'http://10.0.2.2:8000/api/categorys/';
+      http.Response response = await http.post(
+        url,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: json.encode(
+          {
+            'communityName': communityName,
+          },
+        ),
+      );
+      var data = json.decode(response.body) as Map;
+      // if (data['error'] = false) {
+      //   return false;
+      // }
+      return data['error'];
+    } catch (e) {
+      print("error create now");
+      print(e);
+      return true;
+    }
+  }
+
   List<Post> get post {
     if (_posts != null) {
       return [..._posts];

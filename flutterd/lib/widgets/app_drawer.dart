@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterd/screens/login_screens.dart';
 import 'package:localstorage/localstorage.dart';
 
+import '../screens/create_community_screen.dart';
 
 class AddDrawer extends StatelessWidget {
   @override
@@ -12,7 +13,11 @@ class AddDrawer extends StatelessWidget {
       Navigator.of(context).pushReplacementNamed(LoginScreens.routeName);
     }
 
-
+    // will redirect to the community creation screen
+    _createCommunityScreen() {
+      Navigator.of(context)
+          .pushReplacementNamed(CreateCommunityScreens.routeName);
+    }
 
     return Drawer(
       child: Column(
@@ -31,44 +36,38 @@ class AddDrawer extends StatelessWidget {
             child: Text(
                 "Best Community market place in the world. Version: 0.0.1"),
           ),
-          
           ListTile(
             onTap: () {
-             // _creategroupnow();
+              _createCommunityScreen();
             },
             trailing: Icon(
               Icons.people,
               color: Theme.of(context).accentColor,
             ),
-	          title : Text('Create Group'),
-	          ),
-
+            title: Text('Create Group'),
+          ),
           ListTile(
             onTap: () {
-             // _creategroupnow();
+              // _creategroupnow();
             },
             trailing: Icon(
               Icons.input,
               color: Theme.of(context).accentColor,
             ),
-	          title : Text('Join Group'),
-	          ),
-
-
+            title: Text('Join Group'),
+          ),
           ListTile(
             onTap: () {
-             // _creategroupnow();
+              // _creategroupnow();
             },
             trailing: Icon(
               Icons.note_add,
               color: Theme.of(context).accentColor,
             ),
-	          title : Text('Create Post'),
-	          ),
-	      
+            title: Text('Create Post'),
+          ),
           Spacer(),
           Divider(),
-          
           ListTile(
             onTap: () {
               _logoutnow();
