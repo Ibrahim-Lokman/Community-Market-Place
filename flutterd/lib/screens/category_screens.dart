@@ -27,7 +27,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
               title: Text("No post for This Category"),
             ),
             body: Center(
-              child: Row(
+              child: Column(
                 children: [
                   ElevatedButton(
                     onPressed: () {
@@ -46,21 +46,21 @@ class _CategoryScreensState extends State<CategoryScreens> {
               centerTitle: true,
             ),
             body: Center(
-              child: Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      _createPostScreen();
-                    },
-                    child: Text("Create a post"),
-                  ),
-                  ListView.builder(
+              child: ListView.builder(
                     itemCount: posts.length,
                     itemBuilder: (ctx, i) => SinglePost(posts[i]),
-                  ),
-                ],
-              ),
+                    ),
             ),
           );
   }
+
+Widget  _createPostButton(){
+  return  TextButton(
+    onPressed: () {
+    _createPostScreen();
+    }, 
+    child: const  Text("Create post"),
+    );
+}
+
 }
