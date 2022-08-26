@@ -46,7 +46,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
               centerTitle: true,
             ),
             body: Center(
-              child: Row(
+              child: Column(
                 children: [
                   ElevatedButton(
                     onPressed: () {
