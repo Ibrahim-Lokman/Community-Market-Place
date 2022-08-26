@@ -9,6 +9,7 @@ import 'package:localstorage/localstorage.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/create_community_screen.dart';
+import 'screens/create_post_screen.dart';
 
 main() => runApp(MyApp());
 
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
           LoginScreens.routeName: (ctx) => LoginScreens(),
           RegisterScreens.routeName: (ctx) => RegisterScreens(),
           CreateCommunityScreens.routeName: (ctx) => CreateCommunityScreens(),
+          CreatePostScreens.routeName: (ctx) => CreatePostScreens(),
         },
       ),
     );

@@ -212,6 +212,39 @@ class PostState with ChangeNotifier {
     }
   }
 
+  Future<bool> createNewPost(
+      String communityName, String title, String type, String content) async {
+    try {
+      var token = storage.getItem('token');
+      String url = 'http://10.0.2.2:8000/api/posts/';
+
+      http.Response response = await http.post(
+        url,
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': 'token $token',
+        },
+        body: json.encode(
+          {
+            'communityName': communityName,
+            'title': title,
+            'type': type,
+            'content': content,
+          },
+        ),
+      );
+      var data = json.decode(response.body) as Map;
+      // if (data['error'] = false) {
+      //   return false;
+      // }
+      return data['error'];
+    } catch (e) {
+      print("error create now");
+      print(e);
+      return true;
+    }
+  }
+
   List<Post> get post {
     if (_posts != null) {
       return [..._posts];
