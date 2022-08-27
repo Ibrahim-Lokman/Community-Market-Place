@@ -26,17 +26,20 @@ class _CategoryScreensState extends State<CategoryScreens> {
             appBar: AppBar(
               title: Text("No post for This Category"),
             ),
-            body: Center(
-              child: Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      _createPostScreen();
-                    },
-                    child: Text("Create a post"),
-                  ),
-                  Text("There is no post in this community"),
-                ],
+            body: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Center(
+                child: Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        _createPostScreen();
+                      },
+                      child: Text("Create a post"),
+                    ),
+                    Text("There is no post in this community"),
+                  ],
+                ),
               ),
             ),
           )
@@ -45,22 +48,25 @@ class _CategoryScreensState extends State<CategoryScreens> {
               title: Text("All Post for ${posts[0].category.title} "),
               centerTitle: true,
             ),
-            body: Center(
-              child: ListView.builder(
-                    itemCount: posts.length,
-                    itemBuilder: (ctx, i) => SinglePost(posts[i]),
+            body: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Column(
+                children: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      _createPostScreen();
+                    },
+                    child: const Text("Create post"),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: posts.length,
+                      itemBuilder: (ctx, i) => SinglePost(posts[i]),
                     ),
+                  ),
+                ],
+              ),
             ),
           );
   }
-
-Widget  _createPostButton(){
-  return  TextButton(
-    onPressed: () {
-    _createPostScreen();
-    }, 
-    child: const  Text("Create post"),
-    );
-}
-
 }
