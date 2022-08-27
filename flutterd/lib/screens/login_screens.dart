@@ -48,6 +48,10 @@ class _LoginScreensState extends State<LoginScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Login Now"),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -56,7 +60,7 @@ class _LoginScreensState extends State<LoginScreens> {
             child: Column(
               children: [
                 Text(
-                  "Login",
+                  "",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 28,

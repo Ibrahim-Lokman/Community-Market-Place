@@ -49,15 +49,15 @@ class _CategoryScreensState extends State<CategoryScreens> {
               centerTitle: true,
             ),
             body: Padding(
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 children: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      _createPostScreen();
-                    },
-                    child: const Text("Create post"),
-                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        _createPostScreen();
+                      },
+                      child: Text("Create a post"),
+                    ),
                   Expanded(
                     child: ListView.builder(
                       itemCount: posts.length,

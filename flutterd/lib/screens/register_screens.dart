@@ -49,7 +49,7 @@ class _RegisterScreensState extends State<RegisterScreens> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Register To Code"),
+        title: Text("Register Now"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -60,7 +60,7 @@ class _RegisterScreensState extends State<RegisterScreens> {
             child: Column(
               children: [
                 Text(
-                  "Register Now",
+                  "",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 28,
@@ -118,14 +118,30 @@ class _RegisterScreensState extends State<RegisterScreens> {
                       onPressed: () {
                         _registerNow();
                       },
-                      child: Text("Register"),
+                      child: Text(
+                        "Register",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      
                     ),
+
+                    Spacer(),
+                    Divider(),
                     FlatButton(
+                      color: Theme.of(context).accentColor,
+                      padding: const EdgeInsets.all(12.0),
                       onPressed: () {
                         Navigator.of(context)
                             .pushReplacementNamed(LoginScreens.routeName);
                       },
-                      child: Text("Login Now"),
+                      child: Text(
+                        "Login Now",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ],
                 ),
