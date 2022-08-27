@@ -86,13 +86,6 @@ class _CreateCommunityScreensState extends State<CreateCommunityScreens> {
                       },
                       child: Text("Create"),
                     ),
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(HomeScreens.routeName);
-                      },
-                      child: Text("Login Now"),
-                    ),
                   ],
                 ),
               ],

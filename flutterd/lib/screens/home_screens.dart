@@ -43,6 +43,12 @@ class _HomeScreensState extends State<HomeScreens> {
       return Scaffold(
         drawer: AddDrawer(),
         appBar: AppBar(
+          actions: <Widget>[
+            IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.search)
+              )
+          ],
           title: Text("Community Market Place"),
           centerTitle: true,
         ),

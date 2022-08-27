@@ -50,16 +50,7 @@ class AddDrawer extends StatelessWidget {
             ),
             title: Text('Create Group'),
           ),
-          ListTile(
-            onTap: () {
-              // _creategroupnow();
-            },
-            trailing: Icon(
-              Icons.input,
-              color: Theme.of(context).accentColor,
-            ),
-            title: Text('Join Group'),
-          ),
+
           ListTile(
             onTap: () {
               _createPostScreen();

@@ -127,13 +127,6 @@ class _CreatePostScreensState extends State<CreatePostScreens> {
                       },
                       child: const Text("Post"),
                     ),
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(HomeScreens.routeName);
-                      },
-                      child: Text("Login Now"),
-                    ),
                   ],
                 ),
               ],
